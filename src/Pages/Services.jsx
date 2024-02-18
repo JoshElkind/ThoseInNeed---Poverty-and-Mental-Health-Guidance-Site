@@ -1,6 +1,14 @@
 import React from 'react'
+import Map1 from "./Map1.jsx"
+import { mapOptions } from './MapConfiguration';
+import { useJsApiLoader } from "@react-google-maps/api";
 
-const Services = () => {
+const Services = ({ latitude, longitude}) => {
+    const { isLoaded } = useJsApiLoader({
+        id: mapOptions.googleMapApiKey,
+        googleMapsApiKey: mapOptions.googleMapApiKey
+    });
+
     return (
       <div>   
         <section className="page-section portfolio" id="services">
@@ -75,7 +83,28 @@ const Services = () => {
                                     </div>
                                     {/* Portfolio Modal - Image*/}
                                     {/*<img className="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />*/}
-                                  
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                    {(() => {
+                                    if (longitude == null) {
+                                        return (
+                                        
+                                        <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
+                                        )
+                                   
+                                    } else {
+                                        return (
+                                        <Map1 longitude={longitude} latitude={latitude} placeType={"food shelter"}/>
+                                        )
+                                    }
+                                    })()}
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    
                                     {/* Portfolio Modal - Text*/}
                                     <p className="mb-4">A proper source of nutrition is the basis of our wellbeing. Malnutrition is one of the leading causes of disease and low quality of life in Canada. If you are starving and in need of a proper meal, please view the following locations above for support.</p>
                                     <button className="btn btn-primary" data-bs-dismiss="modal">
@@ -108,7 +137,27 @@ const Services = () => {
                                     </div>
                                     {/* Portfolio Modal - Image*/}
                                     {/*<img className="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />*/}
-                               
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                    {(() => {
+                                    if (longitude == null) {
+                                        return (
+                                        
+                                        <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
+                                        )
+                                   
+                                    } else {
+                                        return (
+                                        <Map1 longitude={longitude} latitude={latitude} placeType={"homeless shelter"}/>
+                                        )
+                                    }
+                                    })()}
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
                                     {/* Portfolio Modal - Text*/}
                                     <p className="mb-4">Shelter is one of our most fundamental needs. It ensures safety during the night, and a peacefull place where one can recover, reflect, and heal. If you are in need of shelter, please view the nearest available shelters to you above.</p>
                                     <button className="btn btn-primary" data-bs-dismiss="modal">
@@ -141,7 +190,27 @@ const Services = () => {
                                     </div>
                                     {/* Portfolio Modal - Image*/}
                                     {/*<img className="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />*/}
-                              
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                    {(() => {
+                                    if (longitude == null) {
+                                        return (
+                                        
+                                        <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
+                                        )
+                                   
+                                    } else {
+                                        return (
+                                        <Map1 longitude={longitude} latitude={latitude} placeType={"clothing free shelter"}/>
+                                        )
+                                    }
+                                    })()}
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
                                     {/* Portfolio Modal - Text*/}
                                     <p className="mb-4">Even though clothing isn't the most essential need of us human beings, it is still a contributing factor to our health and is important for our well-being. Through the blistering cold of winters, it is important to have warm clothes to keep us safe from disease and plague. If you are in need of proper clothing, please view the closest clothing drives above.</p>
                                     <button className="btn btn-primary" data-bs-dismiss="modal">
@@ -174,7 +243,27 @@ const Services = () => {
                                     </div>
                                     {/* Portfolio Modal - Image*/}
                                     {/*<img className="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />*/}
-                                 
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <div>
+                                    {(() => {
+                                    if (longitude == null) {
+                                        return (
+                                        
+                                        <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
+                                        )
+                                   
+                                    } else {
+                                        return (
+                                        <Map1 longitude={longitude} latitude={latitude} placeType={"mental health clinic"}/>
+                                        )
+                                    }
+                                    })()}
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>    
                                     {/* Portfolio Modal - Text*/}
                                     <p className="mb-4">Keeping a healthy state of mind, and taking care of your mental health are very important. More than 700,000 commit suicide every year, leaving their friends and family hopeless and in a constant stack of suffering. Help yourself by viewing the nearest mental health clinics near you above.</p>
                                     <button className="btn btn-primary" data-bs-dismiss="modal">

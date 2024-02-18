@@ -8,11 +8,11 @@ const Footer = () => {
                 <div className="row">
                     {/* Footer Location*/}
                     <div className="col-lg-4 mb-5 mb-lg-0">
-                        <h4 className="text-uppercase mb-4">Location</h4>
+                        <h4 className="text-uppercase mb-4">OUR FUTURE</h4>
                         <p className="lead mb-0">
-                            2215 John Daniel Drive
+                            More is to come...
                             <br />
-                            Clark, MO 65243
+                           
                         </p>
                     </div>
                     {/* Footer Social Icons*/}
@@ -25,11 +25,10 @@ const Footer = () => {
                     </div>
                     {/* Footer About Text*/}
                     <div className="col-lg-4">
-                        <h4 className="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 className="text-uppercase mb-4">OUR STORY</h4>
                         <p className="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                            Helping as many as possible. Doing what we can. In partnership with you.
+                            
                         </p>
                     </div>
                 </div>
