@@ -1,14 +1,11 @@
 import React from 'react'
-import Map1 from "./Map1.jsx"
-import { mapOptions } from './MapConfiguration';
-import { useJsApiLoader } from "@react-google-maps/api";
+import GoogleMapNearbyPlaces from '../components/GoogleMapNearbyPlaces.jsx'
+import GoogleMapNearbyPlaces2 from '../components/GoogleMapNearbyPlaces2.jsx'
+import GoogleMapNearbyPlaces3 from '../components/GoogleMapNearbyPlaces3.jsx'
+import GoogleMapNearbyPlaces4 from '../components/GoogleMapNearbyPlaces4.jsx'
 
 const Services = ({ latitude, longitude}) => {
-    const { isLoaded } = useJsApiLoader({
-        id: mapOptions.googleMapApiKey,
-        googleMapsApiKey: mapOptions.googleMapApiKey
-    });
-
+    
     return (
       <div>   
         <section className="page-section portfolio" id="services">
@@ -25,7 +22,7 @@ const Services = ({ latitude, longitude}) => {
                 <div className="row justify-content-center">
                     {/* Portfolio Item 1*/}
                     <div className="col-md-6 col-lg-4 mb-5">
-                        <div className="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div className="portfolio-item mx-auto" data-bs-toggle="modal"  data-bs-target="#portfolioModal1">
                             <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div className="portfolio-item-caption-content text-center text-white"><i className="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -68,7 +65,7 @@ const Services = ({ latitude, longitude}) => {
         <div className="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
             <div className="modal-dialog modal-xl">
                 <div className="modal-content">
-                    <div className="modal-header border-0"><button className="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div className="modal-header border-0"><button className="btn-close" type="button" data-bs-dismiss="modal" aria-label="OpenMeClose"></button></div>
                     <div className="modal-body text-center pb-5">
                         <div className="container">
                             <div className="row justify-content-center">
@@ -87,19 +84,19 @@ const Services = ({ latitude, longitude}) => {
                                     <br></br>
                                     <br></br>
                                     <div>
-                                    {(() => {
-                                    if (longitude == null) {
-                                        return (
-                                        
-                                        <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
-                                        )
-                                   
-                                    } else {
-                                        return (
-                                        <Map1 longitude={longitude} latitude={latitude} placeType={"food shelter"}/>
-                                        )
-                                    }
-                                    })()}
+                                        {(() => {
+                                        if (longitude == null) {
+                                            return (
+                                            <h1 style={{color: "red"}}> Please allow the website to access your location in order to view local aid and support locations.</h1>
+                                            )
+                                    
+                                        } else {
+                                            console.log("Services - " + "food bank");
+                                            return (
+                                            <GoogleMapNearbyPlaces longitude={longitude} latitude={latitude} placeType={"food bank"}/>
+                                            )
+                                        }
+                                        })()}
                                     </div>
                                     <br></br>
                                     <br></br>
@@ -149,8 +146,9 @@ const Services = ({ latitude, longitude}) => {
                                         )
                                    
                                     } else {
+                                        console.log("Services - " + "homeless shelter");
                                         return (
-                                        <Map1 longitude={longitude} latitude={latitude} placeType={"homeless shelter"}/>
+                                        <GoogleMapNearbyPlaces2 longitude={longitude} latitude={latitude} placeType={"homeless shelter"}/>
                                         )
                                     }
                                     })()}
@@ -203,7 +201,7 @@ const Services = ({ latitude, longitude}) => {
                                    
                                     } else {
                                         return (
-                                        <Map1 longitude={longitude} latitude={latitude} placeType={"clothing free shelter"}/>
+                                        <GoogleMapNearbyPlaces3 longitude={longitude} latitude={latitude} placeType={"clothing free shelter"}/>
                                         )
                                     }
                                     })()}
@@ -256,7 +254,7 @@ const Services = ({ latitude, longitude}) => {
                                    
                                     } else {
                                         return (
-                                        <Map1 longitude={longitude} latitude={latitude} placeType={"mental health clinic"}/>
+                                        <GoogleMapNearbyPlaces4 longitude={longitude} latitude={latitude} placeType={"mental health clinic"}/>
                                         )
                                     }
                                     })()}

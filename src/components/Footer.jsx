@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="col-lg-4 mb-5 mb-lg-0">
                         <h4 className="text-uppercase mb-4">OUR FUTURE</h4>
                         <p className="lead mb-0">
-                            More is to come...
+                            Is bright and belongs with you!
                             <br />
                            
                         </p>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                     {/* Footer About Text*/}
                     <div className="col-lg-4">
-                        <h4 className="text-uppercase mb-4">OUR STORY</h4>
+                        <h4 className="text-uppercase mb-4">OUR GOAL</h4>
                         <p className="lead mb-0">
                             Helping as many as possible. Doing what we can. In partnership with you.
                             
